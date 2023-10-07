@@ -45,15 +45,15 @@ function Login({ onLogin }) {
         />
         
         <div className="professional-check">
-          <input
-            type="checkbox"
-            id="professional"
-            checked={isProfessional}
-            onChange={() => setIsProfessional(!isProfessional)}
-          />
-          <label htmlFor="professional">I am a professional</label>
+            <input
+                type="checkbox"
+                id="professional"
+                checked={isProfessional}
+                onChange={() => setIsProfessional(!isProfessional)}
+            />
+            <label className="checkbox-label" htmlFor="professional">I am a professional</label>
         </div>
-
+        
         {isProfessional && (
           <input
             type="text"

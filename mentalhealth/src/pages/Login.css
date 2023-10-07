@@ -4,15 +4,64 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-  }
-  
-  .login-form, .create-account {
+    background-color: #f5f5f5; /* A subtle background color for the whole login container */
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.login-form, .create-account {
     margin: 10px;
-  }
-  
-  input {
+    background-color: #ffffff; /* A white background to create a card effect */
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px; /* Adjust width as needed */
+}
+
+input {
     display: block;
-    margin: 10px;
-    padding: 5px;
-  }
-  
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007BFF; /* a pleasant blue color for buttons */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* a darker blue for hover effect */
+}
+
+.professional-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  width: 200px;  /* Add or adjust this value to ensure the text does not wrap */
+}
+
+label {
+  margin-right: 10px;
+  white-space: nowrap;  /* Ensures the text does not wrap to the next line */
+}
+
+.checkbox-label {
+  margin-left: 10px;
+  white-space: nowrap;  /* Ensures the text does not wrap to the next line */
+}
