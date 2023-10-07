@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './pages/Login';
 import UserHome from './pages/UserHome';
 import ProfHome from './pages/ProfHome';
-import UserRegistration from './pages/UserRegistration'; // Import UserRegistration
+import RegistrationPage from './pages/RegistrationPage';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={<Login onLogin={handleLogin} />} />
         <Route path="/userhome" element={loggedIn ? <UserHome /> : <Navigate to="/" />} />
         <Route path="/profhome" element={loggedIn ? <ProfHome /> : <Navigate to="/" />} />
-        <Route path="/register" element={<UserRegistration />} /> {/* Route for registration */}
+        <Route path="/register" element={<RegistrationPage />} /> {/* Route for registration */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
