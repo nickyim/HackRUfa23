@@ -1,0 +1,18 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .login-form, .create-account {
+    margin: 10px;
+  }
+  
+  input {
+    display: block;
+    margin: 10px;
+    padding: 5px;
+  }
+  
