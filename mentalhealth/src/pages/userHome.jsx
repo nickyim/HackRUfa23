@@ -1,11 +1,13 @@
 import React from 'react';
-
+import './UserHome.css';
+//import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function UserHome({ userName }) { // userName prop to display user's name
   return (
     <div className="user-home-container">
 
       {/* Welcome header */}
-      <h1>Welcome {userName}! Nice to see you!</h1>
+      <h1 style={{textAlign : 'center'}} >Welcome {userName}! Nice to see you!</h1>
 
       {/* "To Submissions" button */}
       <button>
@@ -14,12 +16,13 @@ function UserHome({ userName }) { // userName prop to display user's name
 
       {/* Mission statement */}
       <div className="mission-statement">
-        <textarea defaultValue="[write mission statement here]"></textarea>
+        <h2 style ={{textAlign : 'center'}}> "[write mission statement here]"</h2>
+        <p style={{textAlign: 'center'}}> "funies"</p>
       </div>
 
       {/* "Your Submissions:" section */}
       <div id="submissions" className="submissions-section">
-        <h2>Your Submissions:</h2>
+        <h3>Your Submissions:</h3>
         <textarea defaultValue="[Your submissions content here]"></textarea>
       </div>
 
