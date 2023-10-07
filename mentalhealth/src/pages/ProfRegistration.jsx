@@ -47,7 +47,7 @@ function ProfRegistration() {
           />
       </div>
       <div className="input-group">
-          <label>What are you struggling with?</label>
+          <label>What are your areas of expertise?</label>
           <textarea
               value={struggle}
               onChange={(e) => setStruggle(e.target.value)}
@@ -61,10 +61,16 @@ function ProfRegistration() {
           />
       </div>
       <div className="input-group">
-          <label>Optional profile picture</label>
+          <label>Mandatory profile picture</label>
           <input
               type="file"
               onChange={(e) => setProfilePicture(e.target.files[0])}
+          />
+        </div>
+      <div className="input-group">
+          <label>Credentials For Verification</label>
+          <input
+              type="file"
           />
       </div>
       <div className="submit-button">
