@@ -1,6 +1,6 @@
 import React from 'react';
 
-function UserHomePage({ userName }) { // userName prop to display user's name
+function UserHome({ userName }) { // userName prop to display user's name
   return (
     <div className="user-home-container">
 
@@ -27,4 +27,4 @@ function UserHomePage({ userName }) { // userName prop to display user's name
   );
 }
 
-export default UserHomePage;
+export default UserHome;
