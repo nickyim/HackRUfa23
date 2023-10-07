@@ -1,29 +1,31 @@
 import React, { useState } from 'react';
 import UserRegistration from './UserRegistration';
 import ProfRegistration from './ProfRegistration';
+import './RegistrationPage.css';
 
 function RegistrationPage() {
-  const [selectedTab, setSelectedTab] = useState('user');  // 'user' or 'prof'
+    const [selectedTab, setSelectedTab] = useState("user");  // default to "user"
 
-  return (
-    <div>
-      <div className="tab-nav">
-        <button 
-          className={selectedTab === 'user' ? 'active-tab' : ''}
-          onClick={() => setSelectedTab('user')}>
-          User Registration
-        </button>
-        <button 
-          className={selectedTab === 'prof' ? 'active-tab' : ''}
-          onClick={() => setSelectedTab('prof')}>
-          Professional Registration
-        </button>
-      </div>
-
-      {selectedTab === 'user' && <UserRegistration />}
-      {selectedTab === 'prof' && <ProfRegistration />}
-    </div>
-  );
+    return (
+        <div className="registration-container">
+            <div className="tabs-container">
+                <button 
+                    className={`tab ${selectedTab === "user" ? "tab-selected" : ""}`} 
+                    onClick={() => setSelectedTab("user")}>
+                    User Registration
+                </button>
+                <button 
+                    className={`tab ${selectedTab === "prof" ? "tab-selected" : ""}`} 
+                    onClick={() => setSelectedTab("prof")}>
+                    Professional Registration
+                </button>
+            </div>
+            
+            <div className="form-container">
+                {selectedTab === "user" ? <UserRegistration /> : <ProfRegistration />}
+            </div>
+        </div>
+    );
 }
 
 export default RegistrationPage;
