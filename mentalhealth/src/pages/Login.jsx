@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import './Login.css';
+import React, { useState } from "react";
+import "./Login.css";
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [isProfessional, setIsProfessional] = useState(false);
-  const [professionalCode, setProfessionalCode] = useState('');
+  const [professionalCode, setProfessionalCode] = useState("");
 
   const handleLogin = () => {
     // You can put your login logic here.
     // For now, I'll just log to the console.
-    console.log('Login button clicked!');
+    console.log("Login button clicked!");
   };
 
   return (
     <div className="landing-container">
       <h1>Welcome to Mental Health App</h1>
-      
+
       <div className="login-form">
         <input
           type="text"
@@ -30,7 +30,7 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        
+
         <div className="professional-check">
           <input
             type="checkbox"
@@ -50,13 +50,15 @@ function Login() {
           />
         )}
 
-        <button onClick={handleLogin}>
-          Login
-        </button>
+        <button onClick={handleLogin}>Login</button>
       </div>
 
       <div className="create-account">
-        <button onClick={() => { console.log('Create New Account Clicked!'); }}>
+        <button
+          onClick={() => {
+            console.log("Create New Account Clicked!");
+          }}
+        >
           Create New Account
         </button>
       </div>
