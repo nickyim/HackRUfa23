@@ -1,0 +1,72 @@
+.user-home-container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  body {
+    background-color: #ffdab9; /* This is a light peach color */
+  }
+  
+  .welcome-header {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .submissions-button {
+        width: 100%; /* This will make the button as wide as its parent container */
+        background-color: #28a745; /* This will make the button light green */
+        border: none; /* This will remove the default button border */
+        color: black; /* This will make the button text black */
+        padding: 15px 25px; /* This will add some padding to the button */
+        text-align: center; /* This will center the button text */
+        text-decoration: none; /* This will remove the default underline from the link */
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      
+  }
+  
+  .submissions-button a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .mission-statement {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  
+  .mission-header, .funies-text {
+    text-align: center;
+  }
+  
+  .submissions-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .submission-textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .submit-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
