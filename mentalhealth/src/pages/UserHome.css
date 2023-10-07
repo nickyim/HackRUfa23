@@ -1,10 +1,11 @@
+
 .user-home-container {
     width: 80%;
     margin: 0 auto;
     font-family: Arial, sans-serif;
   }
   body {
-    background-color: #ffdab9; /* This is a light peach color */
+    background-color: #87CEEB !important; /* This is a sky blue color */
   }
   
   .welcome-header {
@@ -14,8 +15,8 @@
   }
   
   .submissions-button {
-        width: 100%; /* This will make the button as wide as its parent container */
-        background-color: #28a745; /* This will make the button light green */
+        width: 60%; /* This will make the button as wide as its parent container */
+        background-color: #005cb2; /* This will make the button light green */
         border: none; /* This will remove the default button border */
         color: black; /* This will make the button text black */
         padding: 15px 25px; /* This will add some padding to the button */
@@ -28,20 +29,22 @@
       
   }
   
-  .submissions-button a {
+  .submissions-button {
     color: #fff;
     text-decoration: none;
   }
   
   .mission-statement {
+    width: 100%;
     background-color: #f8f9fa;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
+    
+    display: block;
+    box-sizing: content-box;
   }
   
   .mission-header, .funies-text {
     text-align: center;
+    width: 100%;
   }
   
   .submissions-section {
@@ -64,7 +67,7 @@
     display: block;
     margin: 10px auto;
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #9DC183;
     color: #fff;
     border: none;
     border-radius: 5px;
