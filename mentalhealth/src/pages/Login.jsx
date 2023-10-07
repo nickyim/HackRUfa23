@@ -1,29 +1,69 @@
 import React, { useState } from "react";
-import "./ProfHome.css";
+import "./Login.css";
 
-const WelcomePage = () => {
+function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isProfessional, setIsProfessional] = useState(false);
+  const [professionalCode, setProfessionalCode] = useState("");
+
+  const handleLogin = () => {
+    // You can put your login logic here.
+    // For now, I'll just log to the console.
+    console.log("Login button clicked!");
+  };
+
   return (
-    <div className="welcome-container">
-      <header>
-        <h1>Welcome to Our Website</h1>
-      </header>
+    <div className="landing-container">
+      <h1>Welcome to Mental Health App</h1>
 
-      <section className="mission-statement">
-        <h2>Our Mission Statement</h2>
-        <p>Some text about your mission...</p>
-      </section>
+      <div className="login-form">
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <section className="submission-section">
-        <h2>Your Submissions:</h2>
-
-        <div className="boxes">
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
+        <div className="professional-check">
+          <input
+            type="checkbox"
+            id="professional"
+            checked={isProfessional}
+            onChange={() => setIsProfessional(!isProfessional)}
+          />
+          <label htmlFor="professional">I am a professional</label>
         </div>
-      </section>
+
+        {isProfessional && (
+          <input
+            type="text"
+            placeholder="Enter professional code"
+            value={professionalCode}
+            onChange={(e) => setProfessionalCode(e.target.value)}
+          />
+        )}
+
+        <button onClick={handleLogin}>Login</button>
+      </div>
+
+      <div className="create-account">
+        <button
+          onClick={() => {
+            console.log("Create New Account Clicked!");
+          }}
+        >
+          Create New Account
+        </button>
+      </div>
     </div>
   );
-};
+}
 
-export default WelcomePage;
+export default Login;
