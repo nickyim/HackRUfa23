@@ -1,22 +1,35 @@
-import React, { useState } from "react";
-import "./Login.css";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
-function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+function Login({ onLogin }) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [isProfessional, setIsProfessional] = useState(false);
-  const [professionalCode, setProfessionalCode] = useState("");
+  const [professionalCode, setProfessionalCode] = useState('');
 
-  const handleLogin = () => {
-    // You can put your login logic here.
-    // For now, I'll just log to the console.
-    console.log("Login button clicked!");
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    // For now, any input will allow login
+    // In the future, you would add authentication logic here
+    if (isProfessional) {
+      onLogin(true);  // if professional, pass true to App's handleLogin
+      navigate('/profhome'); // navigate to professional home page
+    } else {
+      onLogin(false);  // if not professional, pass false to App's handleLogin
+      navigate('/userhome');  // navigate to user home page
+    }
+  };
+
+  const handleCreateAccountClick = () => {
+    navigate("/register");  // Navigate to UserRegistration page
   };
 
   return (
     <div className="landing-container">
       <h1>Welcome to Mental Health App</h1>
-
+      
       <div className="login-form">
         <input
           type="text"
@@ -30,7 +43,7 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-
+        
         <div className="professional-check">
           <input
             type="checkbox"
@@ -50,15 +63,13 @@ function Login() {
           />
         )}
 
-        <button onClick={handleLogin}>Login</button>
+        <button onClick={handleLoginClick}>
+          Login
+        </button>
       </div>
 
       <div className="create-account">
-        <button
-          onClick={() => {
-            console.log("Create New Account Clicked!");
-          }}
-        >
+        <button onClick={handleCreateAccountClick}>
           Create New Account
         </button>
       </div>

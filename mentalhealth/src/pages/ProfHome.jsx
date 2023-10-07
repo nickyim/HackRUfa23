@@ -1,9 +1,9 @@
 import React from "react";
-import "./WelcomePage.css";
+import "./ProfHome.css";
 
-const WelcomePage = () => {
+const ProfHome = () => {
   return (
-    <div className="welcome-container">
+    <div className="profhome-container">
       <header>
         <h1>Welcome to Our Website</h1>
       </header>
@@ -26,4 +26,4 @@ const WelcomePage = () => {
   );
 };
 
-export default WelcomePage;
+export default ProfHome;
