@@ -12,7 +12,7 @@ const ProfHome = () => {
   return (
     <div className="profhome-container">
       <header>
-        <h1>Welcome Back!</h1>
+        <h1>Welcome!</h1>
       </header>
         {/* Profile Icon Button */}
         <Button variant="light" className="profile-icon-button" onClick={() => navigate('/profile')}>
