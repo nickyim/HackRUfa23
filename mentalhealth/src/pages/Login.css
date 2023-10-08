@@ -9,7 +9,7 @@
   font-family: Arial, sans-serif;
 }
 body {
-  background-color: #E6E6FA; /* Changed to a softer color */
+  background-color: #E6E6FA; 
 }
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
@@ -48,14 +48,14 @@ button, .btn {
   border-radius: 10px;
   max-width: 800px;
   margin: 20px auto;
-  overflow: auto;/* This will remove the underline */
-  text-align: center; /* This will center the text */
+  overflow: auto;
+  text-align: center; 
 }
 .mission-statement a {
-  text-decoration: none; /* This will remove the underline from the link */
+  text-decoration: none; 
 }
 button.mission-statement {
-  margin-top: 50px; /* Adjust this value as needed */
+  margin-top: 50px; 
   width: 30%;
 }
 button:hover {
@@ -66,7 +66,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 15px 0 20px; /* Adjusted the margin for increased spacing */
+  margin: 15px 0 20px;
   width: 200px;
 }
 

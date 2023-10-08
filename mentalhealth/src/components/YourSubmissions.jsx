@@ -6,8 +6,8 @@ import { ref, onValue, push, remove } from "firebase/database";
 
 const YourSubmissions = ({ currentUser }) => {
   const [submissions, setSubmissions] = useState([]);
-  const [showModal, setShowModal] = useState(false); // Added this state
-  const [selectedSubmission, setSelectedSubmission] = useState(null); // Added this state
+  const [showModal, setShowModal] = useState(false);
+  const [selectedSubmission, setSelectedSubmission] = useState(null);
   const [userMessage, setUserMessage] = useState("");
   const [currentResponse, setCurrentResponse] = useState("");
   const [fileURLs, setFileURLs] = useState([]);
@@ -81,7 +81,6 @@ const YourSubmissions = ({ currentUser }) => {
 
   return (
     <div>
-      {/* Render Text Submissions */}
       {textSubmissions.map((submission) => (
         <div key={submission.id}>
           <h4>
@@ -100,11 +99,9 @@ const YourSubmissions = ({ currentUser }) => {
           >
             View Conversation
           </div>
-          {/* ... other components */}
         </div>
       ))}
 
-      {/* Render File Submissions */}
       {fileSubmissions.map((file) => (
         <div key={file.id}>
           {file.fileURL ? (

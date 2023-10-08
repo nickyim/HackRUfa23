@@ -29,8 +29,8 @@
 }
 
 .tab:hover {
-  border-bottom-color: #007BFF; /* Updated color for hover */
-  background-color: #e6f0ff; /* Lighter shade of blue for hover */
+  border-bottom-color: #007BFF; 
+  background-color: #e6f0ff; 
 }
 
 .tab.tab-selected {
@@ -45,13 +45,13 @@
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-  color: #fff; /* White text on active tab */
-  background-color: #8B668B; /* Deeper shade of purple for active tab */
+  color: #fff; 
+  background-color: #8B668B;
   border-color: #8B668B #8B668B #D1C2E1; 
 }
 
 .nav-tabs .nav-link:hover {
-  color: #fff; /* White text on hover */
-  background-color: #9B78A3; /* Slightly lighter purple on hover */
+  color: #fff; 
+  background-color: #9B78A3; 
   border-color: #9B78A3; 
 }
