@@ -108,9 +108,21 @@ const YourSubmissions = ({ currentUser }) => {
       {fileSubmissions.map((file) => (
         <div key={file.id}>
           {file.fileURL ? (
-            <img src={file.fileURL} alt="User Upload" width="200" />
+            file.fileURL.endsWith(".mp3") ? (
+              <audio controls>
+                <source src={file.fileURL} type="audio/mp3" />
+                Your browser does not support the audio tag.
+              </audio>
+            ) : file.fileURL.endsWith(".mp4") ? (
+              <video width="320" height="240" controls>
+                <source src={file.fileURL} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <p></p>
+            )
           ) : (
-            <p>No uploaded file</p>
+            <p>No file URL</p>
           )}
           <div
             onClick={() => {
