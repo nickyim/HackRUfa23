@@ -8,7 +8,7 @@
 }
 
 h1 {
-    font-size: 30px;  /* Adjusted the size from the default h1 size to 24px */
+    font-size: 30px;  
     text-align: center;
     margin-bottom: 20px;
 }
@@ -26,11 +26,11 @@ input, textarea {
 }
 
 .required-asterisk {
-    color: red;
+    color: rgb(245, 5, 5);
 }
 
 
-/* Tab Styles */
+
 
 .tab-container {
     display: flex;
@@ -47,7 +47,7 @@ input, textarea {
 }
 
 .tab-item:hover {
-    background-color: #add8e6; /* Lighter blue on hover */
+    background-color: #add8e6; 
 }
 
 .tab-item.active {

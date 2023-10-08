@@ -40,34 +40,30 @@ function Login({ onLogin }) {
         const proffesionalRef = ref(db, "users/" + uid + "/access");
         try {
           const snapshot = await get(proffesionalRef);
-              if (snapshot.exists()) {
-                  const proffesional = snapshot.val();
-                  
-                  if (proffesional === 1) {
-                      navigate('/profhome');
-                  } else if (proffesional === 0) {
-                      navigate('/userhome');
-                  } else {
-                    console.log("here");
-                      navigate('/userhome');
-                      // Handle or navigate to a default route if needed
-                  }
-              } else {
-                  console.error("Access field not found for user:", uid);
-                  // Handle or navigate to a default route if needed
-              }
-          } catch (error) {
-              console.error("Error checking access field:", error);
-              // Handle or navigate to a default route if needed
+          if (snapshot.exists()) {
+            const proffesional = snapshot.val();
+
+            if (proffesional === 1) {
+              navigate("/profhome");
+            } else if (proffesional === 0) {
+              navigate("/userhome");
+            } else {
+              console.log("here");
+              navigate("/userhome");
             }
+          } else {
+            console.error("Access field not found for user:", uid);
+          }
+        } catch (error) {
+          console.error("Error checking access field:", error);
+        }
       })
       .catch((error) => {
         // Handle Errors here
         const errorCode = error.code;
         const errorMessage = error.message;
-        const email = error.customData?.email; // Ensure safe access with optional chaining
+        const email = error.customData?.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
-        // ... You can add more error handling if needed
       });
   };
 
@@ -79,12 +75,10 @@ function Login({ onLogin }) {
         navigate("/register");
       })
       .catch((error) => {
-        // Handle Errors here
         const errorCode = error.code;
         const errorMessage = error.message;
-        const email = error.customData?.email; // Ensure safe access with optional chaining
+        const email = error.customData?.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
-        // ... You can add more error handling if needed
       });
   };
 

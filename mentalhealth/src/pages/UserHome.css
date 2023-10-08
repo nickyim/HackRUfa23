@@ -49,14 +49,14 @@ body {
 }
 
 .mission-header, .funies-text {
-    font-size: 1.25em; /* Decreased font size */
+    font-size: 1.25em; 
     text-align: center;
     width: 100%;
-    font-family: 'Hello Sans', sans-serif; /* Use Hello Sans font */
+    font-family: 'Hello Sans', sans-serif; 
 }
 
 .image-container {
-    text-align: center; /* Center the image */
+    text-align: center; 
     margin: 20px 0;
 }
 

@@ -4,13 +4,13 @@
     padding: 30px;
     border: 1px solid #e0e0e0;
     border-radius: 15px;
-    background-color: #f9f9f9; /* Soft background color */
+    background-color: #f9f9f9; 
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .icon-container {
-    font-size: 50px; /* Size of the icon */
-    color: #8B668B; /* Color taken from your previous CSS theme */
+    font-size: 50px; 
+    color: #8B668B;
     margin-bottom: 20px;
 }
 
@@ -20,11 +20,11 @@ h1 {
 }
 
 p {
-    color: #555; /* Slightly subdued text for the secondary message */
-    font-size: 1.1em; /* Slightly bigger font for emphasis */
+    color: #555;
+    font-size: 1.1em; 
 }
 
 strong {
-    font-weight: bold; /* Making it bold */
-    color: #8B668B; /* Using the purple theme color for more emphasis */
+    font-weight: bold; 
+    color: #8B668B; 
 }

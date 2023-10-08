@@ -116,8 +116,12 @@ function UserHome({ userName: propUserName }) {
     <Container fluid>
       <div className="user-home-container">
         {/* Profile Icon Button */}
-        <Button variant="light" className="profile-icon-button" onClick={() => navigate('/profile')}>
-            <i className="bi bi-person-circle"></i>
+        <Button
+          variant="light"
+          className="profile-icon-button"
+          onClick={() => navigate("/profile")}
+        >
+          <i className="bi bi-person-circle"></i>
         </Button>
         <Container>
           <h1 className="welcome-header" style={{ textAlign: "center" }}>
@@ -173,6 +177,7 @@ function UserHome({ userName: propUserName }) {
             that the support you find here contributes positively to your mental
             health journey. Sincerely, HeartToHeart
           </div>
+          <div className="image-container"></div>
           <div id="submissions" className="submissions-section">
             <h3>Your Submissions:</h3>
             <textarea
