@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './UserRegistration.css';
+import {db, auth, storage} from '../firebase-config'
+import { ref, set, child, push } from "firebase/database";
 import Alert from 'react-bootstrap/Alert';
 
 function ProfRegistration({ onRegisterSuccess }) {
@@ -15,17 +17,57 @@ function ProfRegistration({ onRegisterSuccess }) {
   const [showAlert, setShowAlert] = useState(false);
   
 
-  const handleRegisterClick = () => {
-    // Here, you'd usually send the data to the server, validate it, etc.
-    // For the sake of this example, we'll assume registration is always successful.
-
-    // Assuming the registration is successful:
+  const handleRegisterClick = async () => {
+    const uid = auth.currentUser.uid; // Get the current user's UID
+    const userEmail = auth.currentUser.email; // Get the current user's email
+    console.log(userEmail);
+    
+    const userRef = ref(db, 'users/' + uid); // Use ref() function to get a reference
+    console.log(uid);
+    
+    if (!profilePicture) {
+        await set(userRef, { // Use set() function to save data
+            firstName,
+            lastName,
+            pronouns,
+            age,
+            struggle,
+            bio,
+            email: userEmail  // <-- Set the email here
+        });
+    } else {
+        const storageRef = storage.ref(`profile_pictures/${profilePicture.name}`);
+        const uploadTask = storageRef.put(profilePicture);
+        uploadTask.on(
+            'state_changed',
+            snapshot => {
+                // Handle the upload progress if needed
+            },
+            error => {
+                console.error("Error uploading image:", error);
+            },
+            async () => {
+                const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
+                await set(userRef, { // Use set() function to save data
+                    firstName,
+                    lastName,
+                    pronouns,
+                    age,
+                    struggle,
+                    bio,
+                    profilePicture: downloadURL,
+                    email: userEmail  // <-- Set the email here as well
+                });
+            }
+        );
+    }
+ 
     setShowAlert(true);
     setTimeout(() => {
         onRegisterSuccess();
         setShowAlert(false);
     }, 1000);
-};
+ };
 
 const EyeIcon = () => (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
