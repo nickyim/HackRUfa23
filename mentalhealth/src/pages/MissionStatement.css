@@ -1,0 +1,13 @@
+body {
+    background-color: #87CEEB; /* This will make the background color of the webpage sky blue */
+}
+
+.mission-statement {
+    background-color: #005cb2; /* This will make the mission statement box dark blue */
+    color: #fff; /* This will make the text color white */
+    font-family: 'Comic Sans MS', 'Chalkduster', sans-serif; /* This will make the font fun and easily readable */
+    padding: 20px; /* This will add some padding around the text */
+    border-radius: 10px; /* This will round the corners of the box */
+    max-width: 800px; /* This will prevent the box from becoming too wide on large screens */
+    margin: 20px auto; /* This will center the box and add some space above and below it */
+}
