@@ -31,7 +31,7 @@ function ProfRegistration({ onRegisterSuccess }) {
             lastName,
             pronouns,
             age,
-            struggle,
+            expertise,
             bio,
             email: userEmail  // <-- Set the email here
         });
@@ -53,7 +53,7 @@ function ProfRegistration({ onRegisterSuccess }) {
                     lastName,
                     pronouns,
                     age,
-                    struggle,
+                    expertise,
                     bio,
                     profilePicture: downloadURL,
                     email: userEmail  // <-- Set the email here as well
