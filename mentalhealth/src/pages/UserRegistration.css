@@ -26,7 +26,7 @@ input, textarea {
 }
 
 .required-asterisk {
-    color: red;
+    color: rgb(245, 5, 5);
 }
 
 
