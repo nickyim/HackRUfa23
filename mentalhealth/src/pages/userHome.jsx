@@ -5,7 +5,12 @@ import { Button, Container, Modal } from "react-bootstrap";
 import { auth, db } from "../firebase-config";
 import { getDatabase, ref, push, onValue, child } from "firebase/database";
 import YourSubmissions from "../components/YourSubmissions";
-import { getStorage, uploadBytes, getDownloadURL } from "firebase/storage";
+import {
+  getStorage,
+  uploadBytes,
+  getDownloadURL,
+  ref as storageRef,
+} from "firebase/storage";
 import { ref as sRef } from "firebase/storage";
 
 function UserHome({ userName: propUserName }) {
@@ -17,6 +22,7 @@ function UserHome({ userName: propUserName }) {
   const [showModal, setShowModal] = useState(false);
   const [uploadStatus, setUploadStatus] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
+  const [fileURL, setFileURL] = useState("");
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
