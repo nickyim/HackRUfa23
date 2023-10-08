@@ -1,6 +1,6 @@
 # HeartToHeart
 
-This is a platform created to bridge the gap in mental health support by creating an accessible and affordable alternative to traditional therapy. We connect professional volunteers with users who provide submissions about their struggles and what type of help they are looking for. Through videos and other forms of communication, we foster a personal connection and highlight the importance of mental health support.
+This is a platform created to bridge the gap in mental health support by creating an accessible and affordable alternative to traditional therapy. We connect volunteer professionals with users who provide submissions about their struggles and what type of help they are looking for. Through videos and other forms of communication, we foster a personal connection and highlight the importance of mental health support.
 
 ## Features
 
