@@ -10,21 +10,36 @@ const YourSubmissions = ({ currentUser }) => {
   const [selectedSubmission, setSelectedSubmission] = useState(null); // Added this state
   const [userMessage, setUserMessage] = useState("");
   const [currentResponse, setCurrentResponse] = useState("");
+  const [fileURLs, setFileURLs] = useState([]);
+  const [textSubmissions, setTextSubmissions] = useState([]);
+  const [fileSubmissions, setFileSubmissions] = useState([]);
 
   useEffect(() => {
     if (currentUser) {
-      const submissionsRef = ref(db, `users/${currentUser.uid}/submissions`);
-      onValue(submissionsRef, (snapshot) => {
+      const textSubmissionsRef = ref(
+        db,
+        `users/${currentUser.uid}/submissions`
+      );
+      onValue(textSubmissionsRef, (snapshot) => {
         const data = snapshot.val();
         const allSubmissions = [];
-        for (let submissionId in data) {
-          const submission = {
-            ...data[submissionId],
-            id: submissionId,
-          };
-          allSubmissions.push(submission);
+        for (let id in data) {
+          allSubmissions.push({ id, ...data[id] });
         }
-        setSubmissions(allSubmissions);
+        setTextSubmissions(allSubmissions);
+      });
+
+      const fileSubmissionsRef = ref(
+        db,
+        `users/${currentUser.uid}/fileSubmissions`
+      );
+      onValue(fileSubmissionsRef, (snapshot) => {
+        const data = snapshot.val();
+        const allFiles = [];
+        for (let id in data) {
+          allFiles.push({ id, ...data[id] });
+        }
+        setFileSubmissions(allFiles);
       });
     }
   }, [currentUser]);
@@ -66,12 +81,16 @@ const YourSubmissions = ({ currentUser }) => {
 
   return (
     <div>
-      {submissions.map((submission) => (
+      {/* Render Text Submissions */}
+      {textSubmissions.map((submission) => (
         <div key={submission.id}>
           <h4>
-            {submission.submission.substring(0, 30) +
-              (submission.submission.length > 30 ? "..." : "")}
+            {submission.submission
+              ? submission.submission.substring(0, 30) +
+                (submission.submission.length > 30 ? "..." : "")
+              : "No Text Content"}
           </h4>
+
           <div
             onClick={() => {
               setSelectedSubmission(submission);
@@ -81,8 +100,30 @@ const YourSubmissions = ({ currentUser }) => {
           >
             View Conversation
           </div>
+          {/* ... other components */}
         </div>
       ))}
+
+      {/* Render File Submissions */}
+      {fileSubmissions.map((file) => (
+        <div key={file.id}>
+          {file.fileURL ? (
+            <img src={file.fileURL} alt="User Upload" width="200" />
+          ) : (
+            <p>No uploaded file</p>
+          )}
+          <div
+            onClick={() => {
+              setSelectedSubmission(file); // Adjust this part according to your needs
+              setShowModal(true);
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            View File
+          </div>
+        </div>
+      ))}
+
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Conversation</Modal.Title>
