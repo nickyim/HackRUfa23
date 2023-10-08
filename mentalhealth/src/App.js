@@ -6,6 +6,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase-config';
 import ProfHome from './pages/ProfHome';
 import RegistrationPage from './pages/RegistrationPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);

@@ -8,6 +8,7 @@ body {
     background-color: #E6E6FA !important; /* Changed to a softer color */
 }
 
+
 .welcome-header {
     text-align: center;
     color: #333;
@@ -18,9 +19,10 @@ body {
 
 .submissions-button {
     width: 40%; /* Reduced width */
-    background-color: #005cb2;
+    background-color: #C3B1E1;
     border: none;
-    color: white; /* Changed text color to white for better contrast */
+    color: rgb(67, 66, 66); /* Changed text color to white for better contrast */
+    font-weight: bold;
     padding: 15px 25px;
     text-align: center;
     text-decoration: none;
@@ -54,7 +56,7 @@ body {
     font-family: 'Hello Sans', sans-serif; /* Use Hello Sans font */
 }
 .submissions-section {
-    background-color: #f8f9fa;
+    background-color: #FAF9F6;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 15px; /* Increased border radius for softer edges */
@@ -66,16 +68,33 @@ body {
     padding: 10px;
     border: 1px solid #ced4da;
     border-radius: 15px; /* Increased border radius for softer edges */
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
 
 .submit-button {
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
     padding: 10px 20px;
-    background-color: #9DC183;
-    color: #fff;
+    background-color: #C3B1E1;
+    color: rgb(67, 66, 66); /* Changed text color to white for better contrast */
+    font-weight: bold;
     border: none;
     border-radius: 15px; /* Increased border radius for softer edges */
     cursor: pointer;
 }
+
+.file-input {
+    display: inline-block;
+    margin-bottom: 15px; /* Adjust the value as per your need */
+    border-radius: 15px;
+    
+  }
+  
+  .upload-button {
+    display: inline-block;
+    border-radius: 15px;
+    background-color: #C3B1E1;
+    color: rgb(67, 66, 66); /* Changed text color to white for better contrast */
+    font-weight: bold;
+  }
+  

@@ -97,6 +97,7 @@ const GoogleSignUp = () => {
 
         {isProfessional && (
           <input
+            className="professional-code-input"
             type="text"
             placeholder="Enter professional code"
             value={professionalCode}
@@ -106,7 +107,6 @@ const GoogleSignUp = () => {
 
         <button onClick={handleLoginClick}>Login</button>
       </div>
-
       <div className="google-login">
         <button onClick={GoogleLogIn}>Login with Google</button>
         <button onClick={GoogleSignUp}>Sign up with Google</button>
