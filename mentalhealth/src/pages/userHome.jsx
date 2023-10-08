@@ -12,8 +12,7 @@ import {
   ref as storageRef,
 } from "firebase/storage";
 import { ref as sRef } from "firebase/storage";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 function UserHome({ userName: propUserName }) {
   const [submission, setSubmission] = useState("");
@@ -25,6 +24,7 @@ function UserHome({ userName: propUserName }) {
   const [uploadStatus, setUploadStatus] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileURL, setFileURL] = useState("");
+  const [selectedFileURL, setSelectedFileURL] = useState("");
 
   const navigate = useNavigate();
 
@@ -57,6 +57,11 @@ function UserHome({ userName: propUserName }) {
         setUploadStatus("Upload successful!");
       });
     }
+  };
+
+  const handleCloseModal = () => {
+    setSelectedFile(null);
+    setShowModal(false);
   };
 
   useEffect(() => {
@@ -123,35 +128,50 @@ function UserHome({ userName: propUserName }) {
               <button className="submissions-button">To Submissions</button>
             </a>
           </div>
-
           <div className="mission-statement">
-          Disclaimer: Urgent Mental Health Support:
-
-Thank you for using our platform to connect with volunteer therapists and seek support for your mental well-being. We are committed to providing a safe and empathetic space for individuals to share their thoughts and feelings.
-
-However, it is crucial to understand that our platform is not a substitute for professional mental health services, and there are certain precautions you should be aware of:
-
-In Case of Urgent Mental Health Emergency: If you are in crisis or experiencing a mental health emergency that poses an immediate risk to yourself or others, please do not use this platform as your primary source of help. Instead, contact your local emergency services or a mental health crisis hotline immediately. Your safety and well-being are our top priorities.
-
-Not a Replacement for Professional Therapy: Our platform provides a supportive environment, but the responses you receive from volunteer therapists are not a substitute for professional therapy or medical advice. If you have ongoing mental health concerns, consider seeking assistance from a licensed mental health professional.
-
-Confidentiality and Privacy: While we take utmost care to maintain user privacy and confidentiality, please remember that the internet is not entirely secure. Be mindful of the information you share on this platform, and avoid disclosing personal or sensitive details that you are uncomfortable sharing online.
-
-Respect and Civility: We expect all users to treat one another with respect and kindness. Any form of harassment, hate speech, or inappropriate behavior will not be tolerated and may result in the removal of your access to the platform.
-
-User Responsibility: It's important to recognize that the platform relies on the goodwill of volunteer therapists who provide their time and expertise voluntarily. Be patient and understanding in your interactions, and keep in mind that response times may vary.
-
-Feedback: If you have any feedback or concerns regarding the platform or the responses you receive, please do not hesitate to reach out to us. Your input helps us improve our services.
-
-By using this platform, you acknowledge and agree to these precautions and guidelines. We are here to support you to the best of our ability, but your safety and well-being are of paramount importance. Please use this platform responsibly and in conjunction with professional mental health services when needed.
-
-If you are uncertain about any aspect of your mental health or have questions about our platform, please consult with a mental health professional or a medical expert.
-
-Thank you for being a part of our community, and we hope that the support you find here contributes positively to your mental health journey.
-
-Sincerely,
-
-HeartToHeart
+            Disclaimer: Urgent Mental Health Support: Thank you for using our
+            platform to connect with volunteer therapists and seek support for
+            your mental well-being. We are committed to providing a safe and
+            empathetic space for individuals to share their thoughts and
+            feelings. However, it is crucial to understand that our platform is
+            not a substitute for professional mental health services, and there
+            are certain precautions you should be aware of: In Case of Urgent
+            Mental Health Emergency: If you are in crisis or experiencing a
+            mental health emergency that poses an immediate risk to yourself or
+            others, please do not use this platform as your primary source of
+            help. Instead, contact your local emergency services or a mental
+            health crisis hotline immediately. Your safety and well-being are
+            our top priorities. Not a Replacement for Professional Therapy: Our
+            platform provides a supportive environment, but the responses you
+            receive from volunteer therapists are not a substitute for
+            professional therapy or medical advice. If you have ongoing mental
+            health concerns, consider seeking assistance from a licensed mental
+            health professional. Confidentiality and Privacy: While we take
+            utmost care to maintain user privacy and confidentiality, please
+            remember that the internet is not entirely secure. Be mindful of the
+            information you share on this platform, and avoid disclosing
+            personal or sensitive details that you are uncomfortable sharing
+            online. Respect and Civility: We expect all users to treat one
+            another with respect and kindness. Any form of harassment, hate
+            speech, or inappropriate behavior will not be tolerated and may
+            result in the removal of your access to the platform. User
+            Responsibility: It's important to recognize that the platform relies
+            on the goodwill of volunteer therapists who provide their time and
+            expertise voluntarily. Be patient and understanding in your
+            interactions, and keep in mind that response times may vary.
+            Feedback: If you have any feedback or concerns regarding the
+            platform or the responses you receive, please do not hesitate to
+            reach out to us. Your input helps us improve our services. By using
+            this platform, you acknowledge and agree to these precautions and
+            guidelines. We are here to support you to the best of our ability,
+            but your safety and well-being are of paramount importance. Please
+            use this platform responsibly and in conjunction with professional
+            mental health services when needed. If you are uncertain about any
+            aspect of your mental health or have questions about our platform,
+            please consult with a mental health professional or a medical
+            expert. Thank you for being a part of our community, and we hope
+            that the support you find here contributes positively to your mental
+            health journey. Sincerely, HeartToHeart
           </div>
           <div id="submissions" className="submissions-section">
             <h3>Your Submissions:</h3>
@@ -181,10 +201,6 @@ HeartToHeart
               setShowModal={setShowModal}
             />
           </div>
-
-          <Modal show={showModal} onHide={() => setShowModal(false)}>
-            {/* ... Your Modal Content Here ... */}
-          </Modal>
         </Container>
       </div>
     </Container>
