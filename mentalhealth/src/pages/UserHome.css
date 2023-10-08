@@ -21,7 +21,7 @@ body {
     width: 40%; /* Reduced width */
     background-color: #C3B1E1;
     border: none;
-    color: rgb(67, 66, 66); /* Changed text color to white for better contrast */
+    color: #fff; /* Changed text color to white for better contrast */
     font-weight: bold;
     padding: 15px 25px;
     text-align: center;
@@ -89,7 +89,7 @@ body {
     margin: 20px auto;
     padding: 10px 20px;
     background-color: #C3B1E1;
-    color: rgb(67, 66, 66); /* Changed text color to white for better contrast */
+    color: #fff; /* Changed text color to white for better contrast */
     font-weight: bold;
     border: none;
     border-radius: 15px; /* Increased border radius for softer edges */
@@ -107,7 +107,7 @@ body {
     display: inline-block;
     border-radius: 15px;
     background-color: #C3B1E1;
-    color: rgb(67, 66, 66); /* Changed text color to white for better contrast */
+    color: #fff; /* Changed text color to white for better contrast */
     font-weight: bold;
   }
   

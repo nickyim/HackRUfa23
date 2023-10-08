@@ -117,36 +117,33 @@ function UserHome({ userName: propUserName }) {
           </div>
 
           <div className="mission-statement">
-            The mission of our hackathon project is to bridge the gap in mental
-            health support by creating an accessible and affordable alternative
-            to traditional therapy. We recognize that many individuals, for
-            various reasons, face barriers when seeking professional therapy
-            services. Whether it be due to financial constraints or a lack of
-            access to mental health resources, countless people are left without
-            the support they desperately need. Our vision is to provide a
-            platform where individuals can share their thoughts, emotions, and
-            struggles by recording short messages. These messages serve as a
-            medium for them to express their feelings, difficulties, and
-            challenges. Our innovative approach connects these individuals with
-            volunteer therapists who are willing to dedicate their time and
-            expertise to offer compassionate and empathetic responses. The heart
-            of our project lies in the belief that everyone deserves access to
-            support, and even a brief 5-10 minute response can make a
-            significant difference in someone's life. By leveraging the power of
-            technology and the kindness of volunteer therapists, we aim to bring
-            hope and assistance to those who have been silently battling their
-            mental health challenges without access to therapy. Our mission is
-            fueled by the understanding that mental well-being is a fundamental
-            human right, and it should never be contingent on one's financial
-            status or geographic location. Through this endeavor, we aspire to
-            create a community of empathy, support, and healing. We envision a
-            world where anyone, regardless of their circumstances, can find
-            solace, guidance, and a path towards better mental health through
-            our platform. Our project is a testament to the power of technology
-            and human compassion, working hand in hand to make mental health
-            support accessible to all. Together, we aim to provide hope,
-            strength, and a brighter future for individuals on their journey to
-            improved mental well-being.
+          Disclaimer: Urgent Mental Health Support:
+
+Thank you for using our platform to connect with volunteer therapists and seek support for your mental well-being. We are committed to providing a safe and empathetic space for individuals to share their thoughts and feelings.
+
+However, it is crucial to understand that our platform is not a substitute for professional mental health services, and there are certain precautions you should be aware of:
+
+In Case of Urgent Mental Health Emergency: If you are in crisis or experiencing a mental health emergency that poses an immediate risk to yourself or others, please do not use this platform as your primary source of help. Instead, contact your local emergency services or a mental health crisis hotline immediately. Your safety and well-being are our top priorities.
+
+Not a Replacement for Professional Therapy: Our platform provides a supportive environment, but the responses you receive from volunteer therapists are not a substitute for professional therapy or medical advice. If you have ongoing mental health concerns, consider seeking assistance from a licensed mental health professional.
+
+Confidentiality and Privacy: While we take utmost care to maintain user privacy and confidentiality, please remember that the internet is not entirely secure. Be mindful of the information you share on this platform, and avoid disclosing personal or sensitive details that you are uncomfortable sharing online.
+
+Respect and Civility: We expect all users to treat one another with respect and kindness. Any form of harassment, hate speech, or inappropriate behavior will not be tolerated and may result in the removal of your access to the platform.
+
+User Responsibility: It's important to recognize that the platform relies on the goodwill of volunteer therapists who provide their time and expertise voluntarily. Be patient and understanding in your interactions, and keep in mind that response times may vary.
+
+Feedback: If you have any feedback or concerns regarding the platform or the responses you receive, please do not hesitate to reach out to us. Your input helps us improve our services.
+
+By using this platform, you acknowledge and agree to these precautions and guidelines. We are here to support you to the best of our ability, but your safety and well-being are of paramount importance. Please use this platform responsibly and in conjunction with professional mental health services when needed.
+
+If you are uncertain about any aspect of your mental health or have questions about our platform, please consult with a mental health professional or a medical expert.
+
+Thank you for being a part of our community, and we hope that the support you find here contributes positively to your mental health journey.
+
+Sincerely,
+
+HeartToHeart
           </div>
           <div className="image-container">
             <img
