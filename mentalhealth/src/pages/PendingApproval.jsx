@@ -2,7 +2,7 @@ import React, { useEffect, useState,useRef } from 'react';
 import { db, auth } from '../firebase-config';  // Adjust the path
 import { ref, get } from 'firebase/database';
 import { useNavigate } from 'react-router-dom';
-import './ProfilePage.css'; // You can create a CSS file for styling
+import './PendingApproval.css'; // You can create a CSS file for styling
 
 function PendingApproval() {
     const navigate = useNavigate();

@@ -2,15 +2,21 @@
 import React from "react";
 import "./ProfHome.css";
 import Submissions from "../components/Submissions"; // Make sure the path is correct based on your directory structure
+import { useNavigate } from 'react-router-dom';
 
 const ProfHome = () => {
-  /* These are TEST subnmissions. Will replace with fetching from database. */
+
+  const navigate = useNavigate();
 
   return (
     <div className="profhome-container">
       <header>
         <h1>Welcome Back!</h1>
       </header>
+        {/* Profile Icon Button */}
+        <button className="profile-icon-button" onClick={() => navigate('/profile')}>
+          🚹 Profile  {/* This is a dummy icon, replace with your desired icon */}
+        </button>
 
       <section className="mission-statement">
         <h2>To Our Professionals</h2>
