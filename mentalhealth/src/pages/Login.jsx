@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { auth, db } from '../firebase-config';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth, db } from "../firebase-config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { ref, set } from "firebase/database";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import './Login.css';
+import "./Login.css";
 
 function Login({ onLogin }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [isProfessional, setIsProfessional] = useState(false);
-  const [professionalCode, setProfessionalCode] = useState('');
+  const [professionalCode, setProfessionalCode] = useState("");
 
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
     if (isProfessional) {
       onLogin(true);
-      navigate('/profhome');
+      navigate("/profhome");
     } else {
       onLogin(false);
-      navigate('/userhome');
+      navigate("/userhome");
     }
   };
 
@@ -33,7 +33,7 @@ function Login({ onLogin }) {
     const auth = getAuth();
     signInWithPopup(auth, provider)
       .then((result) => {
-        navigate('/register');
+        navigate("/register");
       })
       .catch((error) => {
         // Handle Errors here
@@ -48,7 +48,7 @@ function Login({ onLogin }) {
   return (
     <div className="landing-container">
       <h1>Welcome to Mental Health App</h1>
-      
+
       <div className="login-form">
         <input
           type="text"
@@ -62,17 +62,19 @@ function Login({ onLogin }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        
+
         <div className="professional-check">
-            <input
-                type="checkbox"
-                id="professional"
-                checked={isProfessional}
-                onChange={() => setIsProfessional(!isProfessional)}
-            />
-            <label className="checkbox-label" htmlFor="professional">I am a professional</label>
+          <input
+            type="checkbox"
+            id="professional"
+            checked={isProfessional}
+            onChange={() => setIsProfessional(!isProfessional)}
+          />
+          <label className="checkbox-label" htmlFor="professional">
+            I am a professional
+          </label>
         </div>
-        
+
         {isProfessional && (
           <input
             type="text"
@@ -82,15 +84,11 @@ function Login({ onLogin }) {
           />
         )}
 
-        <button onClick={handleLoginClick}>
-          Login
-        </button>
+        <button onClick={handleLoginClick}>Login</button>
       </div>
 
       <div className="create-account">
-        <button onClick={handleCreateAccountClick}>
-          Create New Account
-        </button>
+        <button onClick={handleCreateAccountClick}>Create New Account</button>
       </div>
       <div className="google-login">
         <button onClick={GoogleLogIn}>Login with Google</button>
