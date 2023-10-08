@@ -14,7 +14,9 @@ function ProfRegistration({ onRegisterSuccess }) {
   const [expertise, setExpertise] = useState('');
   const [bio, setBio] = useState('');
   const [profilePicture, setProfilePicture] = useState(null);
-  const [showAlert, setShowAlert] = useState(false);  
+  const [showAlert, setShowAlert] = useState(false);const [proffesional, setProffesional] = useState(0);
+  const [access, setAccess] = useState(0);
+  
 
   const handleRegisterClick = async () => {
     const uid = auth.currentUser.uid; // Get the current user's UID
@@ -32,6 +34,8 @@ function ProfRegistration({ onRegisterSuccess }) {
             age,
             expertise,
             bio,
+            proffesional:1,
+            access:0,
             email: userEmail  // <-- Set the email here
         });
     } else {
@@ -54,6 +58,8 @@ function ProfRegistration({ onRegisterSuccess }) {
                     age,
                     expertise,
                     bio,
+                    proffesional:1,
+                    access:0,
                     profilePicture: downloadURL,
                     email: userEmail  // <-- Set the email here as well
                 });
@@ -172,7 +178,7 @@ const EyeOffIcon = () => (
       </div>
       {showAlert && (
                 <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
-                    Registration successful! Please wait while you are being approved...
+                    Registration successful! Redirecting to login...
                 </Alert>
             )}
         <button className="btn btn-primary" onClick={handleRegisterClick}>

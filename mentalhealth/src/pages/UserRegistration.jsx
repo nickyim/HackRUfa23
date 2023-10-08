@@ -17,6 +17,8 @@ function UserRegistration({ onRegisterSuccess }) {
   const [bio, setBio] = useState('');
   const [profilePicture, setProfilePicture] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
+  const [proffesional, setProffesional] = useState(0);
+  const [access, setAccess] = useState(0);
 
   const handleRegisterClick = async () => {
     const uid = auth.currentUser.uid; // Get the current user's UID
@@ -34,6 +36,8 @@ function UserRegistration({ onRegisterSuccess }) {
             age,
             struggle,
             bio,
+            proffesional:0,
+            access:0,
             email: userEmail  // <-- Set the email here
         });
     } else {
@@ -56,6 +60,8 @@ function UserRegistration({ onRegisterSuccess }) {
                     age,
                     struggle,
                     bio,
+                    proffesional:0,
+                    access:0,
                     profilePicture: downloadURL,
                     email: userEmail  // <-- Set the email here as well
                 });
