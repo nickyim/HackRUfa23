@@ -3,8 +3,8 @@ import "./UserHome.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Container } from "react-bootstrap";
 import { auth, db } from "../firebase-config";
-import { getDatabase, ref, set } from "firebase/database";
-import YourSubmissions from '../components/YourSubmissions';  // Ensure the import path is correct based on your folder structure
+import { getDatabase, ref, push } from "firebase/database";
+import YourSubmissions from "../components/YourSubmissions"; // Ensure the import path is correct based on your folder structure
 
 function UserHome({ userName: propUserName }) {
   const [submission, setSubmission] = useState("");
@@ -30,13 +30,25 @@ function UserHome({ userName: propUserName }) {
   };
 
   const handleSubmission = () => {
+    console.log("Handling submission");
     if (currentUser) {
+      console.log("current user exists");
+
       const db = getDatabase();
-      set(ref(db, "users/" + currentUser.uid), {
+      const submissionRef = ref(
+        db,
+        "users/" + currentUser.uid + "/submissions"
+      );
+      console.log({ username: displayName });
+      push(submissionRef, {
         username: displayName,
         email: currentUser.email,
         submission: submission,
+      }).then(() => {
+        console.log("data write to firebase");
       });
+    } else {
+      console.log("User is not logged in.");
     }
   };
 
@@ -59,7 +71,7 @@ function UserHome({ userName: propUserName }) {
                 Our Mission
               </h2>
               <p className="funies-text">
-              {" "}
+                {" "}
                 The mission of our hackathon project is to bridge the gap in
                 mental health support by creating an accessible and affordable
                 alternative to traditional therapy. We recognize that many
@@ -102,7 +114,10 @@ function UserHome({ userName: propUserName }) {
                 onChange={handleSubmissionChange}
                 className="submission-textarea"
               ></textarea>
-              <button onClick={handleSubmission} className="submit-button">
+              <button
+                onClick={() => handleSubmission()}
+                className="submit-button"
+              >
                 Submit
               </button>
 

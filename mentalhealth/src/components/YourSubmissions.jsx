@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import { db } from '../firebase-config';
+import React, { useState, useEffect } from "react";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import { db } from "../firebase-config";
 import { ref, onValue } from "firebase/database";
 
 const YourSubmissions = ({ currentUser }) => {
@@ -11,11 +11,14 @@ const YourSubmissions = ({ currentUser }) => {
 
   useEffect(() => {
     if (currentUser) {
-      const userSubmissionsRef = ref(db, 'users/' + currentUser.uid);
+      const userSubmissionsRef = ref(
+        db,
+        "users/" + currentUser.uid + "/submissions"
+      );
       onValue(userSubmissionsRef, (snapshot) => {
         const data = snapshot.val();
-        if (data && data.submission) {
-          setSubmissions([data.submission]);
+        if (data) {
+          setSubmissions(Object.values(data));
         } else {
           setSubmissions([]);
         }
@@ -26,16 +29,16 @@ const YourSubmissions = ({ currentUser }) => {
   return (
     <div>
       {submissions.map((submission, index) => (
-        <div 
-          key={index} 
-          className="submission-box" 
+        <div
+          key={index}
+          className="submission-box"
           onClick={() => {
-            setSelectedSubmission(submission);
+            setSelectedSubmission(submission.submission);
             setShowModal(true);
           }}
-          style={{ cursor: 'pointer' }}
+          style={{ cursor: "pointer" }}
         >
-          <p>{submission}</p>
+          <p>{submission.submission}</p>
         </div>
       ))}
 
@@ -47,7 +50,9 @@ const YourSubmissions = ({ currentUser }) => {
           {selectedSubmission && <p>{selectedSubmission}</p>}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>Close</Button>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Close
+          </Button>
         </Modal.Footer>
       </Modal>
     </div>
