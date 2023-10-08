@@ -1,0 +1,30 @@
+.pending-approval-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    background-color: #f9f9f9; /* Soft background color */
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container {
+    font-size: 50px; /* Size of the icon */
+    color: #8B668B; /* Color taken from your previous CSS theme */
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+p {
+    color: #555; /* Slightly subdued text for the secondary message */
+    font-size: 1.1em; /* Slightly bigger font for emphasis */
+}
+
+strong {
+    font-weight: bold; /* Making it bold */
+    color: #8B668B; /* Using the purple theme color for more emphasis */
+}
