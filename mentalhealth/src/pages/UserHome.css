@@ -1,75 +1,81 @@
-
 .user-home-container {
     width: 80%;
     margin: 0 auto;
-    font-family: Arial, sans-serif;
-  }
-  body {
-    background-color: #87CEEB !important; /* This is a sky blue color */
-  }
-  
-  .welcome-header {
+    font-family: 'Roboto', sans-serif; /* Changed to a more modern font */
+}
+
+body {
+    background-color: #E6E6FA !important; /* Changed to a softer color */
+}
+
+.welcome-header {
     text-align: center;
     color: #333;
     margin-top: 20px;
-  }
-  
-  .submissions-button {
-        width: 60%; /* This will make the button as wide as its parent container */
-        background-color: #005cb2; /* This will make the button light green */
-        border: none; /* This will remove the default button border */
-        color: black; /* This will make the button text black */
-        padding: 15px 25px; /* This will add some padding to the button */
-        text-align: center; /* This will center the button text */
-        text-decoration: none; /* This will remove the default underline from the link */
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-      
-  }
-  
-  .submissions-button {
-    color: #fff;
+    font-size: 2.5em; /* Increased font size */
+    font-weight: bold; /* Made the font bold */
+}
+
+.submissions-button {
+    width: 40%; /* Reduced width */
+    background-color: #005cb2;
+    border: none;
+    color: white; /* Changed text color to white for better contrast */
+    padding: 15px 25px;
+    text-align: center;
     text-decoration: none;
-  }
-  
-  .mission-statement {
+    display: inline-block;
+    font-size: 1.2em; /* Increased font size */
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px; /* Added rounded edges */
+    font-family: 'Roboto', sans-serif; /* Changed to a more modern font */
+}
+
+.mission-statement-container {
+    border-radius: 15px; /* Increase this value to make the corners more rounded */
+    overflow: hidden; /* This will clip the inner content to the border radius */
+}
+
+.mission-statement {
     width: 100%;
-    background-color: #f8f9fa;
-    
+    height: 200px; /* Adjust this value to your preference */
+    background-color: #FAF9F6;
     display: block;
-    box-sizing: content-box;
-  }
-  
-  .mission-header, .funies-text {
+    box-sizing: border-box; /* Changed from content-box to border-box */
+    overflow: auto; /* This will add a scrollbar when the content exceeds the box height */
+    padding: 20px; /* Added padding for better text layout */
+}
+
+.mission-header, .funies-text {
+    font-size: 1.25em; /* Decreased font size */
     text-align: center;
     width: 100%;
-  }
-  
-  .submissions-section {
+    font-family: 'Hello Sans', sans-serif; /* Use Hello Sans font */
+}
+.submissions-section {
     background-color: #f8f9fa;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 5px;
-  }
-  
-  .submission-textarea {
+    border-radius: 15px; /* Increased border radius for softer edges */
+}
+
+.submission-textarea {
     width: 100%;
     height: 100px;
     padding: 10px;
     border: 1px solid #ced4da;
-    border-radius: 5px;
+    border-radius: 15px; /* Increased border radius for softer edges */
     margin-bottom: 10px;
-  }
-  
-  .submit-button {
+}
+
+.submit-button {
     display: block;
     margin: 10px auto;
     padding: 10px 20px;
     background-color: #9DC183;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px; /* Increased border radius for softer edges */
     cursor: pointer;
-  }
+}
