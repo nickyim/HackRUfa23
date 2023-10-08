@@ -111,9 +111,9 @@ function UserHome({ userName: propUserName }) {
     <Container fluid>
       <div className="user-home-container">
         {/* Profile Icon Button */}
-        <button className="profile-icon-button" onClick={() => navigate('/profile')}>
-          🚹 Profile  {/* This is a dummy icon, replace with your desired icon */}
-        </button>
+        <Button variant="light" className="profile-icon-button" onClick={() => navigate('/profile')}>
+            <i className="bi bi-person-circle"></i>
+        </Button>
         <Container>
           <h1 className="welcome-header" style={{ textAlign: "center" }}>
             Welcome {displayName}! Nice to see you!
@@ -153,14 +153,6 @@ Sincerely,
 
 HeartToHeart
           </div>
-          <div className="image-container">
-            <img
-              src={process.env.PUBLIC_URL + "/noah.jpg"}
-              alt="Description of Image"
-              className="inserted-image"
-            />
-          </div>
-
           <div id="submissions" className="submissions-section">
             <h3>Your Submissions:</h3>
             <textarea
