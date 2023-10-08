@@ -92,7 +92,7 @@ const GoogleSignUp = () => {
 
   return (
     <div className="landing-container">
-      <h1>Welcome to Mental Health App</h1>
+      <h1>Welcome to HeartToHeart</h1>
 
       <div className="login-form">
         <input
@@ -136,6 +136,16 @@ const GoogleSignUp = () => {
         <button onClick={GoogleLogIn}>Login with Google</button>
         <button onClick={GoogleSignUp}>Sign up with Google</button>
       </div>
+      <div>
+          
+
+      </div>
+      
+  
+  <button className="mission-statement" onClick={() => navigate("/MissionStatement")}>
+    Read our mission statement</button>
+  
+
     </div>
   );
 }
