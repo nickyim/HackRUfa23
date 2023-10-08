@@ -3,11 +3,19 @@ body {
 }
 
 .mission-statement {
-    background-color: #005cb2; /* This will make the mission statement box dark blue */
+    background-color: #C3B1E1; /* This will make the mission statement box dark blue */
     color: #fff; /* This will make the text color white */
     font-family: 'Comic Sans MS', 'Chalkduster', sans-serif; /* This will make the font fun and easily readable */
     padding: 20px; /* This will add some padding around the text */
     border-radius: 10px; /* This will round the corners of the box */
     max-width: 800px; /* This will prevent the box from becoming too wide on large screens */
-    margin: 20px auto; /* This will center the box and add some space above and below it */
+    margin: 20px auto;
+    height: 100%;
+    overflow: auto; /* This will center the box and add some space above and below it */
 }
+.return-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
