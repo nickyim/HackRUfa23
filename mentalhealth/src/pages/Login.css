@@ -1,68 +1,84 @@
 .landing-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f5f5f5; /* A subtle background color for the whole login container */
-    font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px 0;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 20px;
+.landing-container h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2.2em;
 }
 
-.login-form, .create-account {
-    margin: 10px;
-    background-color: #ffffff; /* A white background to create a card effect */
-    border: 1px solid #ddd;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 15px;
-    width: 300px; /* Adjust width as needed */
+.login-form {
+  margin: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px; /* Increase the padding to make the containers bigger */
+  border-radius: 10px; /* Rounded corners like the buttons */
+  width: 340px; /* Adjusted width as per increased padding */
+}
+
+.create-account {
+  margin-bottom: 10px;
+}
+
+.create-account a {
+  color: grey;
+  text-decoration: none;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.create-account a:hover {
+  color: darkgrey;
 }
 
 input {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    font-size: 16px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0; /* Increase the spacing for the inputs */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-button {
-    background-color: #007BFF; /* a pleasant blue color for buttons */
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
+button, .btn {
+  background-color: #007BFF;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 7px !important; 
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3; /* a darker blue for hover effect */
+  background-color: #0056b3;
 }
 
 .professional-check {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  width: 200px;  /* Add or adjust this value to ensure the text does not wrap */
+  margin: 15px 0 20px; /* Adjusted the margin for increased spacing */
+  width: 200px;
 }
 
-label {
+.professional-code-input {
+  margin: 15px 0;
+}
+
+label, .checkbox-label {
   margin-right: 10px;
-  white-space: nowrap;  /* Ensures the text does not wrap to the next line */
-}
-
-.checkbox-label {
-  margin-left: 10px;
-  white-space: nowrap;  /* Ensures the text does not wrap to the next line */
+  white-space: nowrap;
 }
