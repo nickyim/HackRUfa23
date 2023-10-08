@@ -17,18 +17,24 @@ header h1 {
 
 .mission-statement {
     width: 80%;
+    color: #fff;
     margin: 40px auto; /* Increased margin for more space */
     padding: 30px; /* Increased padding for more internal space */
     border: 1px solid #ddd;
     border-radius: 10px; /* Increased border radius for a softer look */
     background-color: #f9f9f9; /* Added a background color for contrast */
 }
+.mission-statement p{
+    color: #fff;
+}
 
 .submission-section {
     width: 80%;
     margin: 40px auto; /* Increased margin for more space */
     padding: 20px; /* Added padding for internal space */
+    color: #333;
 }
+
 
 .boxes {
     display: flex;

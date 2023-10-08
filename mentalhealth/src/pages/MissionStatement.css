@@ -1,7 +1,9 @@
 body {
     background-color: #87CEEB; /* This will make the background color of the webpage sky blue */
 }
-
+.mission-statement h1{
+ font-size: 3.0em;
+}
 .mission-statement {
     background-color: #C3B1E1; /* This will make the mission statement box dark blue */
     color: #fff; /* This will make the text color white */
