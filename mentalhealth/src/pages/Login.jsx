@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase-config";
-import { ref, set } from "firebase/database";
+import { get,ref, set } from "firebase/database";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import "./Login.css";
 
@@ -31,18 +31,39 @@ function Login({ onLogin }) {
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
     signInWithPopup(auth, provider)
-      .then((result) => {
-        navigate("/register");
+      .then(async (result) => {
+  
+            navigate("/userhome");
+
       })
       .catch((error) => {
         // Handle Errors here
         const errorCode = error.code;
         const errorMessage = error.message;
-        const email = error.customData.email;
+        const email = error.customData?.email;  // Ensure safe access with optional chaining
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ... You can add more error handling if needed
       });
-  };
+};
+
+const GoogleSignUp = () => {
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth();
+  signInWithPopup(auth, provider)
+    .then(async (result) => {
+
+          navigate("/register");
+
+    })
+    .catch((error) => {
+      // Handle Errors here
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.customData?.email;  // Ensure safe access with optional chaining
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ... You can add more error handling if needed
+    });
+};
 
   return (
     <div className="landing-container">
@@ -86,11 +107,9 @@ function Login({ onLogin }) {
         <button onClick={handleLoginClick}>Login</button>
       </div>
 
-      <div className="create-account">
-        <button onClick={handleCreateAccountClick}>Create New Account</button>
-      </div>
       <div className="google-login">
         <button onClick={GoogleLogIn}>Login with Google</button>
+        <button onClick={GoogleSignUp}>Sign up with Google</button>
       </div>
     </div>
   );
