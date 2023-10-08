@@ -6,6 +6,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase-config';
 import ProfHome from './pages/ProfHome';
 import RegistrationPage from './pages/RegistrationPage';
+import Profile from './pages/Profile';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/userhome" element={loggedIn ? <UserHome /> : <Navigate to="/" />} />
         <Route path="/profhome" element={loggedIn ? <ProfHome /> : <Navigate to="/" />} />
         <Route path="/register" element={loggedIn ? <RegistrationPage /> : <Navigate to="/" />} />
+        <Route path="/profile" element={loggedIn ? <Profile /> : <Navigate to="/" />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
