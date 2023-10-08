@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Container } from "react-bootstrap";
 import { auth, db } from "../firebase-config";
 import { getDatabase, ref, set } from "firebase/database";
+import YourSubmissions from '../components/YourSubmissions';  // Ensure the import path is correct based on your folder structure
 
 function UserHome({ userName: propUserName }) {
   const [submission, setSubmission] = useState("");
@@ -15,15 +16,14 @@ function UserHome({ userName: propUserName }) {
       setCurrentUser(user);
 
       if (user) {
-        setDisplayName(user.displayName || propUserName); // Set the currently logged-in user
+        setDisplayName(user.displayName || propUserName);
       } else {
         console.log("No user is signed in.");
       }
     });
 
-    // Cleanup function to unsubscribe the observer when the component is unmounted
     return () => unsubscribe();
-  }, [propUserName]); // The empty array means this useEffect runs once when the component mounts
+  }, [propUserName]);
 
   const handleSubmissionChange = (event) => {
     setSubmission(event.target.value);
@@ -33,10 +33,9 @@ function UserHome({ userName: propUserName }) {
     if (currentUser) {
       const db = getDatabase();
       set(ref(db, "users/" + currentUser.uid), {
-        username: displayName, // Use the 'userName' state here
+        username: displayName,
         email: currentUser.email,
         submission: submission,
-        //... other fields
       });
     }
   };
@@ -60,7 +59,7 @@ function UserHome({ userName: propUserName }) {
                 Our Mission
               </h2>
               <p className="funies-text">
-                {" "}
+              {" "}
                 The mission of our hackathon project is to bridge the gap in
                 mental health support by creating an accessible and affordable
                 alternative to traditional therapy. We recognize that many
@@ -106,6 +105,8 @@ function UserHome({ userName: propUserName }) {
               <button onClick={handleSubmission} className="submit-button">
                 Submit
               </button>
+
+              <YourSubmissions currentUser={currentUser} />
             </div>
           </Container>
         </div>
