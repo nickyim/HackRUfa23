@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth,GoogleAuthProvider } from "firebase/auth";
 import { getDatabase } from "firebase/database";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBqFcw9HiRt6gRVfX_OZzguwNVAtb3IuUA",
@@ -15,5 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app); // This gives you access to the Firebase Authentication
 const db = getDatabase(app); // This gives you access to the Firebase Realtime Database
+const storage = getStorage(app); // <-- Add this line for Firebase Storage
 
-export { app, auth, db };
+export { app, auth, db, storage }; 
