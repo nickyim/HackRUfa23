@@ -103,6 +103,9 @@ function Login({ onLogin }) {
           Create New Account
         </button>
       </div>
+      <div className="google-login">
+        <button onClick={GoogleLogIn}>Login with Google</button>
+      </div>
     </div>
   );
 }
