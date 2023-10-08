@@ -126,8 +126,7 @@ const YourSubmissions = ({ currentUser }) => {
           )}
           <div
             onClick={() => {
-              setSelectedSubmission(file); // Adjust this part according to your needs
-              setShowModal(true);
+              if (file.fileURL) window.open(file.fileURL, "_blank"); // Open the URL in a new tab
             }}
             style={{ cursor: "pointer" }}
           >

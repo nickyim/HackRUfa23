@@ -100,23 +100,6 @@ const Submissions = () => {
           </h4>
         </div>
       ))}
-      {/* Render File Submissions */}
-      {fileSubmissions.map((file, index) => (
-        <div
-          key={index}
-          className="submission-box"
-          onClick={() => {
-            setSelectedSubmission(file); // Set selected submission to the file
-            setShowModal(true);
-          }}
-          style={{ cursor: "pointer" }}
-        >
-          <h4>
-            {file.username} -
-            {file.fileURL ? "File Submission" : "No file provided."}
-          </h4>
-        </div>
-      ))}
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
