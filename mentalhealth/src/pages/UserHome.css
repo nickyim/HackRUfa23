@@ -55,6 +55,19 @@ body {
     width: 100%;
     font-family: 'Hello Sans', sans-serif; /* Use Hello Sans font */
 }
+
+.image-container {
+    text-align: center; /* Center the image */
+    margin: 20px 0; /* Add some vertical spacing */
+}
+
+.inserted-image {
+    max-width: 100%; /* Make sure the image doesn’t overflow the container */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: for rounded corners */
+}
+
+
 .submissions-section {
     background-color: #FAF9F6;
     padding: 20px;

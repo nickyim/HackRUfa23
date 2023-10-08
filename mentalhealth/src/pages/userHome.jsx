@@ -142,6 +142,13 @@ function UserHome({ userName: propUserName }) {
             strength, and a brighter future for individuals on their journey to
             improved mental well-being.
           </div>
+          <div className="image-container">
+            <img
+              src={process.env.PUBLIC_URL + "/noah.jpg"}
+              alt="Description of Image"
+              className="inserted-image"
+            />
+          </div>
 
           <div id="submissions" className="submissions-section">
             <h3>Your Submissions:</h3>
