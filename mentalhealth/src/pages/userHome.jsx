@@ -12,6 +12,8 @@ import {
   ref as storageRef,
 } from "firebase/storage";
 import { ref as sRef } from "firebase/storage";
+import { useNavigate } from 'react-router-dom';
+
 
 function UserHome({ userName: propUserName }) {
   const [submission, setSubmission] = useState("");
@@ -23,6 +25,8 @@ function UserHome({ userName: propUserName }) {
   const [uploadStatus, setUploadStatus] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileURL, setFileURL] = useState("");
+
+  const navigate = useNavigate();
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -106,6 +110,10 @@ function UserHome({ userName: propUserName }) {
   return (
     <Container fluid>
       <div className="user-home-container">
+        {/* Profile Icon Button */}
+        <button className="profile-icon-button" onClick={() => navigate('/profile')}>
+          🚹 Profile  {/* This is a dummy icon, replace with your desired icon */}
+        </button>
         <Container>
           <h1 className="welcome-header" style={{ textAlign: "center" }}>
             Welcome {displayName}! Nice to see you!
