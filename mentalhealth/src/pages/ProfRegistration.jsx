@@ -178,7 +178,7 @@ const EyeOffIcon = () => (
       </div>
       {showAlert && (
                 <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
-                    Registration successful! Redirecting to login...
+                    Registration successful! Your status is currently pending approval...
                 </Alert>
             )}
         <button className="btn btn-primary" onClick={handleRegisterClick}>

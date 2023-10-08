@@ -1,7 +1,8 @@
 // ProfHome.jsx
 import React from "react";
 import "./ProfHome.css";
-import Submissions from "../components/Submissions"; // Make sure the path is correct based on your directory structure
+import Submissions from "../components/Submissions";
+import { Button } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 
 const ProfHome = () => {
@@ -11,13 +12,12 @@ const ProfHome = () => {
   return (
     <div className="profhome-container">
       <header>
-        <h1>Welcome Back!</h1>
+        <h1>Welcome!</h1>
       </header>
         {/* Profile Icon Button */}
-        <button className="profile-icon-button" onClick={() => navigate('/profile')}>
-          🚹 Profile  {/* This is a dummy icon, replace with your desired icon */}
-        </button>
-
+        <Button variant="light" className="profile-icon-button" onClick={() => navigate('/profile')}>
+            <i className="bi bi-person-circle"></i>
+        </Button>
       <section className="mission-statement">
         <h2>To Our Professionals</h2>
         <p>
