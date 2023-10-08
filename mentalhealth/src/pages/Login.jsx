@@ -38,29 +38,28 @@ function Login({ onLogin }) {
 
         // Create a reference to the user's "access" field in the database
         const proffesionalRef = ref(db, "users/" + uid + "/access");
-
         try {
           const snapshot = await get(proffesionalRef);
-
-          if (snapshot.exists()) {
-            const proffesional = snapshot.val();
-
-            if (proffesional === 1) {
-              navigate("/profhome");
-            } else if (proffesional === 0) {
-              navigate("/userhome");
-            } else {
-              console.error("Unexpected value for access:", proffesional);
+              if (snapshot.exists()) {
+                  const proffesional = snapshot.val();
+                  
+                  if (proffesional === 1) {
+                      navigate('/profhome');
+                  } else if (proffesional === 0) {
+                      navigate('/userhome');
+                  } else {
+                    console.log("here");
+                      navigate('/userhome');
+                      // Handle or navigate to a default route if needed
+                  }
+              } else {
+                  console.error("Access field not found for user:", uid);
+                  // Handle or navigate to a default route if needed
+              }
+          } catch (error) {
+              console.error("Error checking access field:", error);
               // Handle or navigate to a default route if needed
             }
-          } else {
-            console.error("Access field not found for user:", uid);
-            // Handle or navigate to a default route if needed
-          }
-        } catch (error) {
-          console.error("Error checking access field:", error);
-          // Handle or navigate to a default route if needed
-        }
       })
       .catch((error) => {
         // Handle Errors here

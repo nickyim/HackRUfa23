@@ -7,6 +7,7 @@ import { auth } from './firebase-config';
 import ProfHome from './pages/ProfHome';
 import RegistrationPage from './pages/RegistrationPage';
 import Profile from './pages/Profile';
+import ProfilePage from './pages/ProfilePage';
 import PendingApproval from './pages/PendingApproval';
 import MissionStatement from './pages/MissionStatement';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -39,6 +40,7 @@ function App() {
         <Route path="/profhome" element={loggedIn ? <ProfHome /> : <Navigate to="/" />} />
         <Route path="/register" element={<RegistrationPage />} />
         <Route path="/profile" element={loggedIn ? <Profile /> : <Navigate to="/" />} />
+        <Route path="/profpg" element={loggedIn ? <ProfilePage />: <Navigate to="/" />} />
         <Route path="/pending-approval" element={<PendingApproval />} />
         <Route path="/missionstatement" element={<MissionStatement />}/>
         <Route path="*" element={<Navigate to="/" />} />
