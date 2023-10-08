@@ -4,33 +4,7 @@ import { auth, db } from '../firebase-config';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { ref, set } from "firebase/database";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
 import './Login.css';
-
-function GoogleLogIn(){
-  const provider = new GoogleAuthProvider();
-  const auth = getAuth();
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
-      const user = result.user;
-      // IdP data available using getAdditionalUserInfo(result)
-      // ...
-    }).catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.customData.email;
-      // The AuthCredential type that was used.
-      const credential = GoogleAuthProvider.credentialFromError(error);
-      // ...
-    });
-  
-}
 
 function Login({ onLogin }) {
   const [username, setUsername] = useState('');
@@ -41,19 +15,34 @@ function Login({ onLogin }) {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    // For now, any input will allow login
-    // In the future, you would add authentication logic here
     if (isProfessional) {
-      onLogin(true);  // if professional, pass true to App's handleLogin
-      navigate('/profhome'); // navigate to professional home page
+      onLogin(true);
+      navigate('/profhome');
     } else {
-      onLogin(false);  // if not professional, pass false to App's handleLogin
-      navigate('/userhome');  // navigate to user home page
+      onLogin(false);
+      navigate('/userhome');
     }
   };
 
   const handleCreateAccountClick = () => {
-    navigate("/register");  // Navigate to UserRegistration page
+    navigate("/register");
+  };
+
+  const GoogleLogIn = () => {
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        navigate('/register');
+      })
+      .catch((error) => {
+        // Handle Errors here
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ... You can add more error handling if needed
+      });
   };
 
   return (
