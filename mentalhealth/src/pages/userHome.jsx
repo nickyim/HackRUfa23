@@ -154,8 +154,14 @@ function UserHome({ userName: propUserName }) {
               Submit
             </button>
             <div>
-              <input type="file" onChange={handleFileChange} />
-              <button onClick={handleFileUpload}>Upload File</button>
+              <input
+                type="file"
+                onChange={handleFileChange}
+                className="file-input"
+              />
+              <button onClick={handleFileUpload} className="upload-button">
+                Upload File
+              </button>
               <span>{uploadStatus}</span>
             </div>
 
