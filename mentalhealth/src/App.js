@@ -7,7 +7,9 @@ import { auth } from './firebase-config';
 import ProfHome from './pages/ProfHome';
 import RegistrationPage from './pages/RegistrationPage';
 import Profile from './pages/Profile';
+import PendingApproval from './pages/PendingApproval';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -34,8 +36,9 @@ function App() {
         <Route path="/" element={<Login onLogin={handleLogin} />} />
         <Route path="/userhome" element={loggedIn ? <UserHome /> : <Navigate to="/" />} />
         <Route path="/profhome" element={loggedIn ? <ProfHome /> : <Navigate to="/" />} />
-        <Route path="/register" element={loggedIn ? <RegistrationPage /> : <Navigate to="/" />} />
+        <Route path="/register" element={<RegistrationPage />} />
         <Route path="/profile" element={loggedIn ? <Profile /> : <Navigate to="/" />} />
+        <Route path="/pending-approval" element={<PendingApproval />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

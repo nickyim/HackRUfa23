@@ -9,9 +9,8 @@ function RegistrationPage() {
   const [key, setKey] = useState('user'); // Default tab
   const navigate = useNavigate();
 
-  const handleRegistrationSuccess = () => {
-    // This can be expanded to handle any post-registration logic if needed
-    navigate('/', { state: { fromRegistration: true } });
+  const handleRegistrationSuccess = (path = '/') => {
+    navigate(path, { state: { fromRegistration: true } });
   };
 
   return (
@@ -22,10 +21,10 @@ function RegistrationPage() {
         onSelect={(k) => setKey(k)}
       >
         <Tab eventKey="user" title="User Registration">
-          <UserRegistration onRegisterSuccess={handleRegistrationSuccess} />
+          <UserRegistration onRegisterSuccess={() => handleRegistrationSuccess()} />
         </Tab>
         <Tab eventKey="prof" title="Professional Registration">
-          <ProfRegistration onRegisterSuccess={handleRegistrationSuccess} />
+          <ProfRegistration onRegisterSuccess={() => handleRegistrationSuccess('/pending-approval')} />
         </Tab>
       </Tabs>
     </div>
