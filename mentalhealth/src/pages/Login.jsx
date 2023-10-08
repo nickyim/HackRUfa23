@@ -77,6 +77,7 @@ function Login({ onLogin }) {
 
         {isProfessional && (
           <input
+            className="professional-code-input"
             type="text"
             placeholder="Enter professional code"
             value={professionalCode}
@@ -88,7 +89,7 @@ function Login({ onLogin }) {
       </div>
 
       <div className="create-account">
-        <button onClick={handleCreateAccountClick}>Create New Account</button>
+          <a href="#" onClick={handleCreateAccountClick}>Create New Account</a>
       </div>
       <div className="google-login">
         <button onClick={GoogleLogIn}>Login with Google</button>
